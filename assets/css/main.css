@@ -1,11 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,300italic,600,600italic,700");
-@import url("fontawesome-all.min.css");
-
-/*
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/* Importar solo Playfair Display desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@600;700&display=swap");
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -1981,117 +1975,99 @@ button.alt:active,
 
 /* Wrappers */
 
-	.wrapper {
-		background-image: url("images/bg.png");
+	.wrapper {;
 		box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 		padding: 8em 0 8em 0;
 		text-align: center;
 	}
 
-		.wrapper.style1 {
-			background-image: none;
-			background-color: #fff;
-		}
+	/* Fondos por sección */
+	.wrapper.style1 {
+	  background-color: #FFFFFF !important;
+	  color: #1B1B1B !important;
+	}
 
-		.wrapper.style2 {
-			background-color: #fafafa;
-			text-shadow: none;
-		}
+	.wrapper.style2 {
+	  background-color: #EDEDED !important;
+	  color: #1B1B1B !important;
+	}
 
-		.wrapper.style3 {
-			background-color: #f4f4f4;
-			text-shadow: none;
-		}
+	.wrapper.style3 {
+	  background-color: #D6D6D6 !important;
+	  color: #1B1B1B !important;
+	}
 
-		.wrapper.style4 {
-			background-color: #303030;
-			color: #999;
-			text-shadow: none;
-		}
+	.wrapper.style4 {
+	  background-color: #302C2C !important;
+	  color: #FFFFFF !important;
+	}
 
-			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
-				color: #fff;
-			}
+	/* Botones */
+	.button {
+	  background-color: #E93324 !important;
+	  color: #FFFFFF !important;
+	  border: none;
+	  border-radius: 8px;
+	}
 
-			.wrapper.style4 form input[type=text],
-			.wrapper.style4 form input[type=password],
-			.wrapper.style4 form select,
-			.wrapper.style4 form textarea {
-				border: none;
-				background: #282828;
-			}
-
-				.wrapper.style4 form input[type=text]:focus,
-				.wrapper.style4 form input[type=password]:focus,
-				.wrapper.style4 form select:focus,
-				.wrapper.style4 form textarea:focus {
-					background: #252525;
-				}
+	.button:hover {
+	  background-color: #C62820 !important;
+	}
 
 /* Nav */
 
-	#nav {
-		background-color: #282828;
-		text-align: center;
-		position: fixed;
-		left: 0;
-		top: 0;
-		width: 100%;
-		z-index: 10000;
-		cursor: default;
-		height: 3.5em;
-		line-height: 3.5em;
-	}
+/* === Override menú superior (#nav) para usar el rojo de marca === */
+#nav {
+  background-color: #E93324 !important;
+}
 
-		#nav ul {
-			margin-bottom: 0;
-			list-style: none;
-			padding-left: 0;
-		}
+/* Links del menú */
+#nav a {
+  color: #FFFFFF !important;
+}
 
-		#nav li {
-			display: inline-block;
-			padding-left: 0;
-		}
+#nav a:hover {
+  background: #C62820 !important; /* rojo más oscuro en hover */
+  color: #FFFFFF !important;
+}
 
-		#nav a {
-			-moz-transition: background-color .2s ease-in-out;
-			-webkit-transition: background-color .2s ease-in-out;
-			-ms-transition: background-color .2s ease-in-out;
-			transition: background-color .2s ease-in-out;
-			position: relative;
-			display: block;
-			color: #fff;
-			text-decoration: none;
-			outline: 0;
-			font-weight: 600;
-			border-radius: 8px;
-			color: #fff;
-			height: 2.5em;
-			line-height: 2.5em;
-			padding: 0 1.25em;
-		}
+/* Item activo (el que tiene la flechita) */
+#nav a.active {
+  background: #B9241A !important; /* aún más oscuro */
+}
 
-			#nav a:hover {
-				color: #fff !important;
-				background: #383838;
-			}
+/* Color de la flechita bajo el activo */
+#nav a.active:before {
+  border-top-color: #E93324 !important;
+}
 
-			#nav a.active {
-				background: #484848;
-			}
+/* Submenú (si usás dropdown) */
+#nav li.has-submenu .submenu {
+  background-color: #C62820 !important;
+}
 
-				#nav a.active:before {
-					content: '';
-					display: block;
-					position: absolute;
-					bottom: -0.6em;
-					left: 50%;
-					margin-left: -0.75em;
-					border-left: solid 0.75em transparent;
-					border-right: solid 0.75em transparent;
-					border-top: solid 0.6em #282828;
-				}
+#nav li.has-submenu .submenu li a {
+  background-color: #C62820 !important;
+  border-bottom: 1px solid #B9241A !important;
+  color: #FFFFFF !important;
+}
+
+#nav li.has-submenu .submenu li a:hover {
+  background-color: #B9241A !important;
+}
+
+/* Restaurar tipografía en el menú y títulos */
+#nav a {
+  font-family: "Playfair Display", serif !important; /* o la fuente que uses para títulos */
+  font-size: 1em; /* ajustá si querés más grande o más chico */
+  font-weight: 600;
+}
+
+/* Mantener tipografía para encabezados del resto del sitio */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif !important;
+}
+
 
 /* Articles */
 
@@ -2483,3 +2459,421 @@ button.alt:active,
 	#nav li.has-submenu .submenu li a:hover {
 	  background-color: #484848;
 	}
+
+	/* Bordes redondeados para los cuadros */
+	.box {
+	    border-radius: 20px; /* ajustá px a gusto */
+	    overflow: hidden; /* para que nada se salga de las esquinas */
+	}
+
+	.box img {
+	    border-radius: 20px;
+	}
+
+	/* Texto general con Lato */
+	body, input, textarea, select {
+	  font-family: "Lato", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+	}
+
+	/* Títulos con Playfair Display */
+	h1, h2, h3, h4, h5, h6 {
+	  font-family: "Playfair Display", Georgia, serif;
+	  font-weight: 700;
+	  letter-spacing: 0;
+	}
+
+	/* Títulos grandes solo para apertura de sección */
+.wrapper.style1 h2,
+.wrapper.style2 h2,
+.wrapper.style3 h2,
+.wrapper.style4 h2 {
+  font-size: 3em !important;     /* buen tamaño en desktop */
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.6em !important;
+}
+
+/* Evitar agrandar los títulos dentro de cuadros/artículos */
+.wrapper .box h2,
+.wrapper .box h3 {
+  font-size: 1.3em !important;
+  line-height: 1.4 !important;
+}
+
+/* Ajuste responsive */
+@media screen and (max-width: 736px) {
+  .wrapper.style1 h2,
+  .wrapper.style2 h2,
+  .wrapper.style3 h2,
+  .wrapper.style4 h2 {
+    font-size: 2em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Reducir espacio superior e inferior SOLO en secciones 2, 3 y 4 */
+
+.wrapper.style2,
+.wrapper.style3,
+.wrapper.style4 {
+  padding-top: 5em !important;   /* espacio arriba */
+  padding-bottom: 5em !important; /* espacio abajo */
+}
+
+.wrapper.style2 .inner,
+.wrapper.style3 .inner,
+.wrapper.style4 .inner {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Header de navegación */
+#header {
+  background-color: #E93324 !important;
+}
+
+/* Enlaces del header */
+#header nav a {
+  color: #FFFFFF !important;
+  text-decoration: none;
+}
+
+#header nav a:hover {
+  color: #FFDADA !important; /* tono claro al pasar el mouse */
+}
+
+/* ===== MENÚ SUPERIOR (#nav): rojo, centrado, un poco más grande y fijo ===== */
+
+/* Barra fija arriba y color de marca */
+#nav {
+  position: fixed !important;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 10000;
+  background-color: #E93324 !important;
+  height: 64px;               /* alto claro de la barra */
+  line-height: 64px;          /* alinea verticalmente los links */
+}
+
+/* Estructura y centrado del listado */
+#nav ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;  /* CENTRADO */
+  align-items: center !important;
+}
+
+/* Ítems en línea (por si algún estilo previo flota) */
+#nav li {
+  display: inline-block !important;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Links: tipografía, tamaño y espaciado */
+#nav a {
+  display: block !important;
+  padding: 0 24px !important;          /* “un poquito más grande” lateral */
+  font-family: "Playfair Display", serif !important;
+  font-weight: 600 !important;
+  font-size: 1.1em !important;         /* “un poquito más grande” de texto */
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  border-radius: 8px;                   /* mantiene pill suave */
+  height: 64px;                         /* match con la barra */
+  line-height: 64px;                    /* centra verticalmente */
+}
+
+/* ===== NAV CENTRADO + DROPDOWN SOLO EN HOVER (DESKTOP) ===== */
+
+/* Que la barra sea fija y por encima de todo */
+#nav {
+  position: fixed !important;
+  top: 0; left: 0; right: 0;
+  z-index: 100000;
+  height: 3.5em;
+  line-height: 3.5em;
+  background-color: #E93324 !important; /* tu rojo */
+}
+
+/* UL centrado al medio */
+#nav ul {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  width: fit-content !important;   /* se ajusta al contenido */
+}
+
+/* LIs prolijos */
+#nav li { display: inline-block; position: relative; }
+
+/* Links con tu tipografía y tamaño un toque mayor */
+#nav a {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 600;
+  font-size: 1.05em;                /* más grande */
+  color: #FFFFFF !important;
+  padding: 0 14px;
+  height: 2.5em; line-height: 2.5em;
+  border-radius: 8px;
+}
+
+#nav a:hover { background: #C62820 !important; color: #fff !important; }
+
+/* Flechita del activo al tono */
+#nav a.active { background: #B9241A !important; }
+#nav a.active:before { border-top-color: #E93324 !important; }
+
+/* ===== Dropdown ===== */
+#nav li.has-submenu .submenu {
+  display: none;                     /* oculto por defecto */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);       /* centrado bajo el padre */
+  min-width: 220px;
+  background-color: #C62820;
+  border-radius: 0 0 8px 8px;
+  padding: 6px 0;
+  z-index: 100001;                   /* sobre el resto */
+  white-space: nowrap;
+}
+
+#nav li.has-submenu .submenu li { display: block; }
+#nav li.has-submenu .submenu li a {
+  display: block;
+  background: transparent;
+  color: #fff !important;
+  border-bottom: 1px solid #B9241A;
+  height: 2.4em; line-height: 2.4em;
+  padding: 0 12px;
+  border-radius: 0;
+  text-align: left;
+}
+#nav li.has-submenu .submenu li:last-child a { border-bottom: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  /* SOLO en dispositivos con hover (desktop): mostrar al pasar el mouse */
+  #nav li.has-submenu:hover > .submenu { display: block; }
+}
+
+/* ===== Mobile: que NO se vea el dropdown y que el nav no se deforme ===== */
+@media screen and (max-width: 736px) {
+  /* Ocultar cualquier dropdown en mobile (sin JS no hay “tap” toggle) */
+  #nav li.has-submenu .submenu { display: none !important; }
+
+  /* Nav scrolleable horizontal si no entran todos */
+  #nav { height: 56px; line-height: 56px; }
+  #nav ul {
+    gap: 8px;
+    width: auto !important;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  #nav ul::-webkit-scrollbar { display: none; }
+
+  #nav a {
+    font-size: 1em;                 /* levemente más chico para que entren */
+    height: 36px; line-height: 36px;
+    border-radius: 999px;           /* “píldoras” */
+    padding: 0 12px;
+  }
+
+  /* Quitar flechita en mobile para evitar desalinear */
+  #nav a.active:before { display: none !important; }
+
+  /* Que el contenido no quede tapado por la barra fija */
+  body { padding-top: 56px !important; }
+}
+
+/* ===== Asegurar el offset del body en desktop también ===== */
+@media screen and (min-width: 737px) {
+  body { padding-top: 3.5em !important; }
+}
+
+/* ===== Centrado perfecto del menú ===== */
+#nav {
+  display: flex !important;
+  justify-content: center !important; /* centra horizontal */
+  align-items: center !important;     /* centra vertical */
+}
+
+#nav > ul {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px;                           /* espacio entre ítems */
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+#nav li {
+  display: inline-block !important;
+  float: none !important;
+}
+
+#nav a {
+  display: block !important;
+  padding: 0 14px;
+}
+
+/* ===== Título "Contacto" en la sección 4 en blanco ===== */
+/* Forzar títulos blancos en la sección 4 */
+.wrapper.style4 h1,
+.wrapper.style4 h2,
+.wrapper.style4 h3,
+.wrapper.style4 h4,
+.wrapper.style4 h5,
+.wrapper.style4 h6 {
+  color: #FFFFFF !important;
+}
+
+/* ===== Unificar botones de la sección 4 ===== */
+.wrapper.style4 input[type="submit"],
+.wrapper.style4 input[type="reset"],
+.wrapper.style4 button {
+  background-color: #E93324 !important;  /* tu rojo principal */
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 8px !important;         /* igual al resto */
+  padding: 0.75em 1.5em !important;
+  font-family: inherit !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover consistente */
+.wrapper.style4 input[type="submit"]:hover,
+.wrapper.style4 input[type="reset"]:hover,
+.wrapper.style4 button:hover {
+  background-color: #C62820 !important;  /* rojo más oscuro */
+}
+
+/* ==== Footer redes sociales arregladas ==== */
+/* Social: que se vean los íconos y no el texto */
+.icon > .label { display: none !important; }               /* oculta los textos "LinkedIn", etc. */
+.icon:before { font-family: 'Font Awesome 5 Free' !important; font-weight: 900; }
+.icon.brands:before { font-family: 'Font Awesome 5 Brands' !important; }
+
+/* Reset visual y centrado de la tira de íconos */
+ul.social {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 0;
+  margin: 2rem 0;
+}
+ul.social li { margin: 0; }
+
+/* Botón redondo */
+ul.social li a {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E93324;      /* rojo marca */
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Tamaño del glifo */
+ul.social li a:before {
+  font-size: 24px;
+  line-height: 1;
+  color: #fff;
+}
+
+/* Hover */
+ul.social li a:hover { background-color: #C62820; }
+
+/* Ocultar los nombres de las redes visualmente, pero mantenerlos para accesibilidad */
+ul.social .label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Aumentar tamaño de íconos dentro de <i> */
+ul.social li a i {
+  font-size: 25px !important; /* ajustá a gusto */
+  line-height: 1;
+}
+
+/* Tamaño global para TODOS los h3 del sitio */
+/* Ajustar tamaño de títulos en las tarjetas de la sección "Sobre mí" */
+.box.style1 h3 {
+  font-size: 1.6em !important;
+  line-height: 1.25 !important;
+}
+@media (max-width: 736px) {
+  .box.style1 h3 {
+    font-size: 1.35em !important;
+  }
+}
+
+/* Color global para todos los links */
+/* Links globales (excepto los que son botones) */
+a:not(.button) {
+  color: #1B1B1B !important;              /* texto link normal */
+  text-decoration: none;
+}
+a:visited:not(.button) {
+  color: #1B1B1B !important;              /* que el visitado no quede violeta/rosa */
+}
+a:hover:not(.button) {
+  color: #E93324 !important;              /* rojo marca al hover */
+  text-decoration: none;
+}
+
+/* Botones: el texto SIEMPRE blanco (sirve para <a class="button"> y .button en general) */
+a.button,
+.button {
+  color: #FFFFFF !important;
+}
+a.button:hover,
+.button:hover {
+  color: #FFFFFF !important;
+}
+
+/* Menú: que siga blanco sí o sí */
+#nav a {
+  color: #FFFFFF !important;
+}
+#nav a:hover {
+  color: #FFFFFF !important;
+}
+
+/* Colores específicos para íconos de redes sociales */
+ul.social a {
+  color: #FFFFFF !important; /* blanco por defecto */
+}
+
+ul.social a:hover {
+  color: #302C2C !important; /* rojo de marca al hover */
+}
+/* Texto blanco en el footer */
+#copyright,
+#copyright li {
+  color: #FFFFFF !important;
+}

@@ -1262,3 +1262,22 @@ ul.social a:hover { color: #302C2C !important; }
 #copyright li {
   color: #FFFFFF !important;
 }
+
+/* PERSONALIZACIÓN DE LA BARRA SUPERIOR */
+
+/* PERSONALIZACIÓN DE LA BARRA SUPERIOR */
+
+#nav {
+  background-color: #FDF351 !important;
+}
+
+#nav a {
+  font-family: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, sans-serif !important;
+  color: #000000 !important;
+}
+
+#nav a:hover,
+#nav a.active {
+  background-color: #EAE245 !important;
+  color: #000000 !important;
+}

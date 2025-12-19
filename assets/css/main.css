@@ -1332,3 +1332,9 @@ ul.social a:hover { color: #302C2C !important; }
   height: 100% !important;  /* ocupa todo el alto */
   border: 0;
 }
+
+#nav {
+  background-color: rgba(255,255,255,0.85) !important;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}

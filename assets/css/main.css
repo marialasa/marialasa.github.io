@@ -2861,11 +2861,10 @@ h6,
 	position: relative !important;
 }
 
-#nav li.book-menu details {
-	position: relative;
-}
-
-#nav li.book-menu summary {
+#nav li.book-menu .book-toggle {
+	appearance: none;
+	background: transparent !important;
+	border: 0 !important;
 	border-radius: 8px;
 	color: #000000 !important;
 	cursor: pointer;
@@ -2876,22 +2875,23 @@ h6,
 	height: 2.5em;
 	line-height: 2.5em;
 	list-style: none;
+	margin: 0;
 	padding: 0 14px;
 	text-decoration: none;
 }
 
-#nav li.book-menu summary::-webkit-details-marker {
+#nav li.book-menu .book-toggle::-webkit-details-marker {
 	display: none;
 }
 
-#nav li.book-menu summary:after {
+#nav li.book-menu .book-toggle:after {
 	content: "▾";
 	font-size: 0.72em;
 	margin-left: 0.45em;
 }
 
-#nav li.book-menu summary:hover,
-#nav li.book-menu details[open] > summary {
+#nav li.book-menu .book-toggle:hover,
+#nav li.book-menu.is-open > .book-toggle {
 	background-color: #B6382B !important;
 	color: #FFFFFF !important;
 }
@@ -2918,7 +2918,7 @@ h6,
 	z-index: 100002;
 }
 
-#nav li.book-menu details[open] .book-submenu {
+#nav li.book-menu.is-open .book-submenu {
 	display: flex !important;
 }
 
@@ -2950,7 +2950,7 @@ h6,
 }
 
 @media screen and (max-width: 736px) {
-	#nav li.book-menu summary {
+	#nav li.book-menu .book-toggle {
 		border-radius: 999px;
 		font-size: 1em;
 		height: 36px;
@@ -3018,16 +3018,16 @@ h6,
 }
 
 #nav a,
-#nav li.book-menu summary {
+#nav li.book-menu .book-toggle {
 	border-radius: 4px !important;
 }
 
 #nav a:hover,
 #nav a:focus,
 #nav a.active,
-#nav li.book-menu summary:hover,
-#nav li.book-menu summary:focus,
-#nav li.book-menu details[open] > summary,
+#nav li.book-menu .book-toggle:hover,
+#nav li.book-menu .book-toggle:focus,
+#nav li.book-menu.is-open > .book-toggle,
 #nav li.book-menu .book-submenu a:hover,
 #nav li.book-menu .book-submenu a:focus {
 	background-color: #B6382B !important;
@@ -3124,6 +3124,7 @@ a:hover:not(.button) {
 	#nav {
 		gap: 14px;
 		padding: 0 14px;
+		overflow: visible !important;
 	}
 
 	#nav .nav-brand {
@@ -3138,8 +3139,30 @@ a:hover:not(.button) {
 		-webkit-overflow-scrolling: touch;
 	}
 
+	#nav.book-menu-open > ul.container {
+		overflow: visible !important;
+	}
+
 	#nav a,
-	#nav li.book-menu summary {
+	#nav li.book-menu .book-toggle {
 		border-radius: 4px !important;
+	}
+
+	#nav li.book-menu .book-submenu {
+		background: rgba(255, 255, 255, 0.98) !important;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+		display: none !important;
+		left: 50% !important;
+		max-width: calc(100vw - 28px);
+		position: fixed !important;
+		top: 56px !important;
+		transform: translateX(-50%) !important;
+		width: max-content !important;
+		z-index: 100010 !important;
+	}
+
+	#nav li.book-menu.is-open .book-submenu {
+		display: flex !important;
 	}
 }

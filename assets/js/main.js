@@ -31,4 +31,39 @@
 			offset: function() { return $nav.height(); }
 		});
 
+	// Book menu.
+		var $bookMenu = $nav.find('.book-menu'),
+			$bookToggle = $bookMenu.find('.book-toggle');
+
+		if ($bookMenu.length && $bookToggle.length) {
+			var closeBookMenu = function() {
+				$bookMenu.removeClass('is-open');
+				$nav.removeClass('book-menu-open');
+				$bookToggle.attr('aria-expanded', 'false');
+			};
+
+			$bookToggle.on('click', function(event) {
+				event.preventDefault();
+				event.stopPropagation();
+
+				var open = !$bookMenu.hasClass('is-open');
+
+				$bookMenu.toggleClass('is-open', open);
+				$nav.toggleClass('book-menu-open', open);
+				$bookToggle.attr('aria-expanded', open ? 'true' : 'false');
+			});
+
+			$bookMenu.find('.book-submenu a').on('click', closeBookMenu);
+
+			$(document).on('click', function(event) {
+				if (!$bookMenu.is(event.target) && $bookMenu.has(event.target).length === 0)
+					closeBookMenu();
+			});
+
+			$window.on('keydown', function(event) {
+				if (event.key === 'Escape')
+					closeBookMenu();
+			});
+		}
+
 })(jQuery);

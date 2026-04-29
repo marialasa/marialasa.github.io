@@ -2892,13 +2892,24 @@ h6,
 
 #nav li.book-menu .book-toggle:hover,
 #nav li.book-menu.is-open > .book-toggle {
-	background-color: #B6382B !important;
-	color: #FFFFFF !important;
+  background-color: #B6382B !important;
+  color: #FFFFFF !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #nav li.book-menu:hover > .book-toggle {
+    background-color: #B6382B !important;
+    color: #FFFFFF !important;
+  }
+
+  #nav li.book-menu:hover .book-submenu {
+    display: flex !important;
+  }
 }
 
 #nav li.book-menu .book-submenu {
-	align-items: stretch !important;
-	background: rgba(255, 255, 255, 0.97) !important;
+  align-items: stretch !important;
+  background: rgba(255, 255, 255, 0.97) !important;
 	border: 1px solid rgba(0, 0, 0, 0.08);
 	border-radius: 8px;
 	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);

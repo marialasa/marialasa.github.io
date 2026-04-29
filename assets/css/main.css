@@ -2923,7 +2923,7 @@ h6,
 	min-width: 190px;
 	padding: 0.4em 0 !important;
 	position: absolute;
-	top: calc(100% + 0.35em);
+	top: calc(100% - 1px);
 	transform: translateX(-50%);
 	width: max-content !important;
 	z-index: 100002;

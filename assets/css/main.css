@@ -1924,9 +1924,14 @@ body > article {
 	margin-top: 0.35em;
 }
 
+#top header {
+	margin: 0 0 1.1em 0;
+}
+
 #top p {
 	font-size: 1.5em;
 	line-height: 1.75em;
+	margin: 0 0 1.1em 0;
 }
 
 #top p a {

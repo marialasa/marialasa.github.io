@@ -2822,12 +2822,18 @@ h6,
 }
 
 .about-links {
+	background: #E6E6E6;
+	border: 1px solid #B6382B;
+	border-radius: 6px;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.35em 0;
 	justify-content: center;
-	margin-top: 2.2em;
+	margin: 2.2em auto 0;
+	max-width: 100%;
+	padding: 0.8em 1.15em;
 	text-align: center;
+	width: fit-content;
 }
 
 .about-links a {
@@ -2856,7 +2862,9 @@ h6,
 
 	.about-links {
 		display: block;
+		padding: 0.85em 1em;
 		text-align: left;
+		width: 100%;
 	}
 
 	.about-links a {

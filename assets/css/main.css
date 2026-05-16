@@ -1905,6 +1905,10 @@ body > article {
 	text-align: left;
 }
 
+#top .row {
+	align-items: center;
+}
+
 #top .image {
 	border-radius: 100%;
 	width: 20em;

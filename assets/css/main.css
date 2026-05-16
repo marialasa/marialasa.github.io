@@ -1925,13 +1925,13 @@ body > article {
 }
 
 #top header {
-	margin: 0 0 1.1em 0;
+	margin: 0;
 }
 
 #top p {
 	font-size: 1.5em;
 	line-height: 1.75em;
-	margin: 0 0 1.1em 0;
+	margin: 0 0 1.9em 0;
 }
 
 #top p a {
@@ -2742,7 +2742,7 @@ ul.social a:hover {
 	font-weight: 300;
 	letter-spacing: 0;
 	line-height: 1.18;
-	margin-top: 0;
+	margin: 0 0 0.45em 0;
 }
 
 #top h1 strong {

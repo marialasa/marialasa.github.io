@@ -56,4 +56,20 @@
 			sections.forEach(function(section) { observer.observe(section); });
 		}
 
+	// Switch de idioma en "About".
+		var langSwitch = document.querySelector('.lang-switch');
+
+		if (langSwitch) {
+			langSwitch.addEventListener('click', function() {
+				var esBlock = document.querySelector('.lang-es'),
+					enBlock = document.querySelector('.lang-en'),
+					current = langSwitch.getAttribute('data-lang'),
+					next = current === 'es' ? 'en' : 'es';
+
+				esBlock.hidden = next !== 'es';
+				enBlock.hidden = next !== 'en';
+				langSwitch.setAttribute('data-lang', next);
+			});
+		}
+
 })(jQuery);

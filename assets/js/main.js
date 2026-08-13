@@ -7,8 +7,7 @@
 (function($) {
 
 	var	$window = $(window),
-		$body = $('body'),
-		$nav = $('#nav');
+		$body = $('body');
 
 	// Breakpoints.
 		breakpoints({
@@ -26,44 +25,35 @@
 		});
 
 	// Scrolly.
-		$('#nav a, .scrolly').scrolly({
-			speed: 1000,
-			offset: function() { return $nav.height(); }
+		$('#site-nav a, .scrolly').scrolly({
+			speed: 1000
 		});
 
-	// Book menu.
-		var $bookMenu = $nav.find('.book-menu'),
-			$bookToggle = $bookMenu.find('.book-toggle');
+	// Scroll-spy: resalta la sección activa en el menú lateral.
+		var sections = document.querySelectorAll('main.content > section[id]'),
+			navLinks = document.querySelectorAll('#site-nav a'),
+			linkById = {};
 
-		if ($bookMenu.length && $bookToggle.length) {
-			var closeBookMenu = function() {
-				$bookMenu.removeClass('is-open');
-				$nav.removeClass('book-menu-open');
-				$bookToggle.attr('aria-expanded', 'false');
-			};
+		navLinks.forEach(function(a) {
+			var href = a.getAttribute('href');
+			if (href && href.charAt(0) === '#')
+				linkById[href.slice(1)] = a;
+		});
 
-			$bookToggle.on('click', function(event) {
-				event.preventDefault();
-				event.stopPropagation();
+		if (sections.length && navLinks.length && 'IntersectionObserver' in window) {
+			var observer = new IntersectionObserver(function(entries) {
+				entries.forEach(function(entry) {
+					var link = linkById[entry.target.id];
 
-				var open = !$bookMenu.hasClass('is-open');
+					if (!link || !entry.isIntersecting)
+						return;
 
-				$bookMenu.toggleClass('is-open', open);
-				$nav.toggleClass('book-menu-open', open);
-				$bookToggle.attr('aria-expanded', open ? 'true' : 'false');
-			});
+					navLinks.forEach(function(a) { a.classList.remove('is-active'); });
+					link.classList.add('is-active');
+				});
+			}, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
 
-			$bookMenu.find('.book-submenu a').on('click', closeBookMenu);
-
-			$(document).on('click', function(event) {
-				if (!$bookMenu.is(event.target) && $bookMenu.has(event.target).length === 0)
-					closeBookMenu();
-			});
-
-			$window.on('keydown', function(event) {
-				if (event.key === 'Escape')
-					closeBookMenu();
-			});
+			sections.forEach(function(section) { observer.observe(section); });
 		}
 
 })(jQuery);

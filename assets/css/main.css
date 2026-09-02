@@ -3751,6 +3751,24 @@ input.book-link:hover {
 	color: #fff !important;
 }
 
+.book-reviews {
+	color: var(--ml-text-muted) !important;
+	font-size: 0.88em;
+	margin: 1.8em 0 0 0 !important;
+	text-align: center;
+}
+
+.book-reviews a,
+.book-reviews a:visited {
+	color: var(--ml-accent) !important;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.book-reviews a:hover {
+	text-decoration: underline;
+}
+
 /* ---- Contact ---- */
 
 .contact-form {

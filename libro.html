@@ -97,24 +97,42 @@
 			}
 
 			.format {
+				position: relative;
 				display: block;
-				padding: 0.85rem 1rem;
+				padding: 0.8rem 3.2rem;
 				border: 1.5px solid var(--accent);
 				border-radius: 999px;
 				background: var(--surface);
 				color: var(--accent);
+				text-align: center;
 				text-decoration: none;
 				transition: background-color .15s ease, color .15s ease;
 			}
 
-			.format strong {
+			/* Fijos a la izquierda: así quedan en columna y no bailan
+			   según el largo del texto de cada botón. */
+			.format-ico {
+				position: absolute;
+				left: 1.35rem;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 22px;
+				height: 22px;
+				stroke: currentColor;
+				fill: none;
+				stroke-width: 1.6;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			.format-name {
 				display: block;
 				font-size: 1.02rem;
 				font-weight: 700;
 				line-height: 1.3;
 			}
 
-			.format span {
+			.format-sub {
 				display: block;
 				font-size: 0.76rem;
 				font-weight: 400;
@@ -129,7 +147,7 @@
 				color: #fff;
 			}
 
-			.format:active span {
+			.format:active .format-sub {
 				color: rgba(255, 255, 255, 0.85);
 			}
 
@@ -139,7 +157,7 @@
 					color: #fff;
 				}
 
-				.format:hover span {
+				.format:hover .format-sub {
 					color: rgba(255, 255, 255, 0.85);
 				}
 			}
@@ -180,23 +198,48 @@
 
 			<nav class="formats" aria-label="Formatos disponibles">
 				<a class="format" href="https://www.eduvim.com.ar/producto/preventa-pais-de-vinalon/" target="_blank" rel="noopener noreferrer">
-					<strong>Edición impresa</strong>
-					<span>Editorial EDUVIM</span>
+					<svg class="format-ico" viewBox="0 0 24 24" aria-hidden="true">
+						<path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+						<path d="M4 17.5A2 2 0 0 1 6 16h12" />
+					</svg>
+					<span>
+						<span class="format-name">Edición impresa</span>
+						<span class="format-sub">Editorial EDUVIM</span>
+					</span>
 				</a>
 
 				<a class="format" href="https://a.co/d/04U0qEFp" target="_blank" rel="noopener noreferrer">
-					<strong>Versión Kindle</strong>
-					<span>Amazon</span>
+					<svg class="format-ico" viewBox="0 0 24 24" aria-hidden="true">
+						<rect x="6.5" y="2.5" width="11" height="19" rx="2" />
+						<path d="M10 18.5h4" />
+					</svg>
+					<span>
+						<span class="format-name">Versión Kindle</span>
+						<span class="format-sub">Amazon</span>
+					</span>
 				</a>
 
 				<a class="format" href="https://ar.bajalibros.com/library/publication/pais-de-vinalon" target="_blank" rel="noopener noreferrer">
-					<strong>Versión eBook</strong>
-					<span>Compatible con Kobo</span>
+					<svg class="format-ico" viewBox="0 0 24 24" aria-hidden="true">
+						<path d="M12 6.5c-1.8-1.6-4.2-2.3-7-2.1v12c2.8-.2 5.2.5 7 2.1 1.8-1.6 4.2-2.3 7-2.1v-12c-2.8-.2-5.2.5-7 2.1Z" />
+						<path d="M12 6.5v12" />
+					</svg>
+					<span>
+						<span class="format-name">Versión eBook</span>
+						<span class="format-sub">Compatible con Kobo</span>
+					</span>
 				</a>
 
 				<a class="format" href="https://www.cadal.org/libros/pdf/Pais-de-Vinalon.pdf" target="_blank" rel="noopener noreferrer">
-					<strong>Leelo gratis en PDF</strong>
-					<span>Edición <em>non-profit</em></span>
+					<svg class="format-ico" viewBox="0 0 24 24" aria-hidden="true">
+						<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" />
+						<path d="M14 3v5h5" />
+						<path d="M12 11.5v5m0 0-1.8-1.8M12 16.5l1.8-1.8" />
+					</svg>
+					<span>
+						<span class="format-name">Leelo gratis en PDF</span>
+						<span class="format-sub">Edición <em>non-profit</em> CADAL</span>
+					</span>
 				</a>
 			</nav>
 

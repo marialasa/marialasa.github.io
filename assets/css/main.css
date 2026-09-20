@@ -3693,7 +3693,7 @@ a.talk-card:hover .talk-play {
 	background: var(--ml-surface);
 	border: 1px solid var(--ml-border);
 	border-radius: 16px;
-	padding: 1.8em;
+	padding: 1.5em 1.5em 1.6em;
 	flex: 1 1 300px;
 	max-width: 360px;
 }
@@ -3720,12 +3720,10 @@ a.talk-card:hover .talk-play {
 	margin: 0 0 1.2em 0 !important;
 }
 
-.book-links {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.7em 0.7em;
-	align-items: center;
-	justify-content: center;
+/* Sin botones adentro de la caja, el margen del último párrafo
+   quedaba como aire muerto al pie. */
+.book-body p:last-child {
+	margin-bottom: 0 !important;
 }
 
 a.book-link,
@@ -3749,6 +3747,79 @@ a.book-link:hover,
 input.book-link:hover {
 	background: var(--ml-accent);
 	color: #fff !important;
+}
+
+/* ---- Formatos del libro: grilla debajo de las tarjetas ---- */
+
+.book-formats {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.8em;
+	margin: 2em auto 0;
+	max-width: 620px;
+}
+
+@media screen and (max-width: 600px) {
+	.book-formats {
+		grid-template-columns: 1fr;
+	}
+}
+
+a.book-format,
+a.book-format:visited {
+	position: relative;
+	display: block;
+	padding: 0.5em 3em;
+	border: 1.5px solid var(--ml-accent);
+	border-radius: 999px !important;
+	background: var(--ml-surface);
+	color: var(--ml-accent) !important;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color .15s ease, color .15s ease;
+}
+
+/* Fijos a la izquierda: quedan en columna y no se mueven
+   según el largo del texto de cada botón. */
+.book-format-ico {
+	position: absolute;
+	left: 1.35em;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 22px;
+	height: 22px;
+	stroke: currentColor;
+	fill: none;
+	stroke-width: 1.6;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.book-format-name {
+	display: block;
+	font-family: "Public Sans", sans-serif;
+	font-size: 0.92em;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.book-format-sub {
+	display: block;
+	font-size: 0.7em;
+	font-weight: 400;
+	line-height: 1.25;
+	color: var(--ml-text-muted);
+	margin-top: 0.05em;
+	transition: color .15s ease;
+}
+
+a.book-format:hover {
+	background: var(--ml-accent);
+	color: #fff !important;
+}
+
+a.book-format:hover .book-format-sub {
+	color: rgba(255, 255, 255, 0.85);
 }
 
 .book-reviews {
